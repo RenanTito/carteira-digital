@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  app:
+    image: openjdk:17
+    container_name: carteira-digital-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    container_name: carteira-digital-db
+    environment:
+      POSTGRES_DB: carteira_digital_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
