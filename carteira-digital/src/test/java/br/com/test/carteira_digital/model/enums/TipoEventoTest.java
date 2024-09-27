@@ -1,10 +1,7 @@
 package br.com.test.carteira_digital.model.enums;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.Random;
 
 public class TipoEventoTest {
 
