@@ -17,7 +17,7 @@ public enum TipoEvento {
 
     public static TipoEvento fromCodigo(Integer codigo) {
         for (TipoEvento evento : TipoEvento.values()) {
-            if (evento.codigo == codigo) {
+            if (evento.codigo.equals(codigo)) {
                 return evento;
             }
         }
