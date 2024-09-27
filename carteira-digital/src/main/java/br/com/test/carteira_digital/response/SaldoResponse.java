@@ -10,13 +10,16 @@ import java.util.Date;
 @Data
 public class SaldoResponse {
 
-    private String saldo;
-
-    private String dataSaldo;
+    private Double saldo;
+    private LocalDate dataSaldo;
 
     public SaldoResponse(Double saldo) {
-        this.saldo = String.valueOf(saldo);
-        this.dataSaldo = String.valueOf(LocalDate.now().format(PeriodoValidator.formatter));
+        this.saldo = saldo;
+        this.dataSaldo = LocalDate.now();
+    }
+
+    public String getDataSaldo() {
+        return dataSaldo.format(PeriodoValidator.formatter);
     }
 
 }
