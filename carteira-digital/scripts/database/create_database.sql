@@ -1,0 +1,1 @@
+CREATE DATABASE carteira_digital;
